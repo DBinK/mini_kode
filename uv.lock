@@ -235,6 +235,7 @@ dependencies = [
     { name = "anthropic" },
     { name = "numpy" },
     { name = "pygame" },
+    { name = "python-dotenv" },
 ]
 
 [package.metadata]
@@ -242,6 +243,7 @@ requires-dist = [
     { name = "anthropic", specifier = ">=0.71.0" },
     { name = "numpy", specifier = "==1.24.3" },
     { name = "pygame", specifier = "==2.5.2" },
+    { name = "python-dotenv", specifier = ">=1.1.1" },
 ]
 
 [[package]]
@@ -420,6 +422,15 @@ wheels = [
     { url = "https://mirror.nju.edu.cn/pypi/web/packages/c2/c9/a41e2dc929529c36d1d1a6cf989f7d69225584d8e1b1e85c70d4b4bcb230/pygame-2.5.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:31648d38ecdc2335ffc0e38fb18a84b3339730521505dac68514f83a1092e3f4" },
     { url = "https://mirror.nju.edu.cn/pypi/web/packages/05/28/5ca545423d6bb55f7ba9d09904c963ced15178f072551629a46b5499d105/pygame-2.5.2-cp312-cp312-win32.whl", hash = "sha256:224c308856334bc792f696e9278e50d099a87c116f7fc314cd6aa3ff99d21592" },
     { url = "https://mirror.nju.edu.cn/pypi/web/packages/66/57/1311ff5bbd64093795f64c66910bbc12b7c5d83ca95766cce7ba501ff7e7/pygame-2.5.2-cp312-cp312-win_amd64.whl", hash = "sha256:dd2d2650faf54f9a0f5bd0db8409f79609319725f8f08af6507a0609deadcad4" },
+]
+
+[[package]]
+name = "python-dotenv"
+version = "1.1.1"
+source = { registry = "https://mirror.nju.edu.cn/pypi/web/simple" }
+sdist = { url = "https://mirror.nju.edu.cn/pypi/web/packages/f6/b0/4bc07ccd3572a2f9df7e6782f52b0c6c90dcbb803ac4a167702d7d0dfe1e/python_dotenv-1.1.1.tar.gz", hash = "sha256:a8a6399716257f45be6a007360200409fce5cda2661e3dec71d23dc15f6189ab" }
+wheels = [
+    { url = "https://mirror.nju.edu.cn/pypi/web/packages/5f/ed/539768cf28c661b5b068d66d96a2f155c4971a5d55684a514c1a0e0dec2f/python_dotenv-1.1.1-py3-none-any.whl", hash = "sha256:31f23644fe2602f88ff55e1f5c79ba497e01224ee7737937930c448e4d0e24dc" },
 ]
 
 [[package]]

@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
-import os
-import sys
 import json
+import os
 import re
-import time
-import threading
 import subprocess
+import sys
+import threading
+import time
 from pathlib import Path
+
+from dotenv import load_dotenv
 
 try:
     from anthropic import Anthropic
@@ -14,9 +16,11 @@ except Exception as e:
     sys.stderr.write("Install with: pip install anthropic\n")
     raise
 
-ANTHROPIC_BASE_URL = "https://api.moonshot.cn/anthropic"
-ANTHROPIC_API_KEY = "sk-xxx"  # Replace with your API key
-AGENT_MODEL = "kimi-k2-turbo-preview"
+load_dotenv()  # 加载 .env 文件中的环境变量
+
+ANTHROPIC_BASE_URL = os.getenv("ANTHROPIC_BASE_URL", "https://api.moonshot.cn/anthropic")
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")  # 必须设置的环境变量
+AGENT_MODEL = os.getenv("AGENT_MODEL", "kimi-k2-turbo-preview")  # 如果未设置，使用默认值
 
 # ---------- Workspace & Helpers ----------
 WORKDIR = Path.cwd()
@@ -417,7 +421,7 @@ def query(messages: list, opts: dict | None = None) -> list:
             )
         finally:
             spinner.stop()
-
+            
         tool_uses = []
         try:
             for block in getattr(res, "content", []):
